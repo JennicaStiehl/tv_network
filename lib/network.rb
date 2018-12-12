@@ -12,12 +12,14 @@ class Network
   end
 
   def highest_paid_actor
-    @shows.sort_by do |show|
-      show.characters.each do |character|
-        # binding.pry
+    highest = []
+    @shows.each do |show|
+      salaries = show.characters.sort_by do |character|
         character.salary
-      end.sort
-    end.last
+      end
+      highest << salaries.last
+    end
+    highest_network = highest.last.actor
   end
 
   def payroll

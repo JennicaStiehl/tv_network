@@ -35,7 +35,6 @@ class NetworkTest < Minitest::Test
   end
 
   def test_it_can_find_highest_paid_actor
-    skip
     michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
     kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
     knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])
@@ -61,7 +60,7 @@ class NetworkTest < Minitest::Test
     nbc.add_show(parks_and_rec)
 
     expected = {
-       "David Hasselhoff" => 1600000,  
+       "David Hasselhoff" => 1600000,
        "William Daniels" => 1000000,
        "Amy Poehler" => 2000000,
        "Nick Offerman" => 1400000
